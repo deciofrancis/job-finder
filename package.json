@@ -1,0 +1,37 @@
+{
+  "name": "job_finder",
+  "version": "1.0.0",
+  "description": "This system is a portal for devs to find job vacancies",
+  "main": "app.js",
+  "scripts": {
+    "dev":"nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deciofrancis/job-finder.git"
+  },
+  "keywords": [
+    "dev",
+    "jobs",
+    "dev",
+    "oportunity"
+  ],
+  "author": "Decio Francis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deciofrancis/job-finder/issues"
+  },
+  "homepage": "https://github.com/deciofrancis/job-finder#readme",
+  "dependencies": {
+    "22": "^0.0.0",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
