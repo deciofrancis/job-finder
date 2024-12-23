@@ -1,5 +1,5 @@
 const express    = require('express');
-const exphbs     = require('express-handlebars');
+var exphbs       = require('express-handlebars'); 
 const app        = express();
 const path       = require('path');
 const db         = require('./db/connection');
@@ -13,11 +13,15 @@ app.listen(PORT, function() {
 
 // body parser
 app.use(bodyParser.urlencoded({ extended: false}));
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+app.engine('.hbs', exphbs.engine({ extname: '.hbs' }));
+app.set('view engine', '.hbs');
 
 // handle bars
 app.set('views', path.join(__dirname, 'views'));
+
+
+// static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // db connection
 db
@@ -31,8 +35,8 @@ db
 
 // routes
 app.get('/', (req, res) => {
-  res.send("It's working");
-})
+  res.render('index');
+});
 
 // jobs routes
 app.use('/jobs', require('./routes/jobs'));
